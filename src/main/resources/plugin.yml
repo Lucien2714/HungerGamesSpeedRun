@@ -1,0 +1,12 @@
+name: HungerGamesSpeedRun
+version: ${project.version}
+main: club.lucien2714.hungergamesspeedrun.HungerGamesSpeedRun
+api-version: 1.17
+authors: [ Lucien2714 ]
+description: experience another type of speedrun and hunting
+website: Lucien2714.club
+commands:
+  careerSelect:
+    description: 选择职业
+  start:
+    description: 游戏开始S
