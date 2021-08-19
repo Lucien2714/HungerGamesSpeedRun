@@ -23,7 +23,6 @@ public class GameStatus {
         temp.career=0;
         onlinePlayers.add(temp);
     }
-    public static boolean loading=false;
     public void ChangeGameStatus(gameState state){
         gameStatus=state;
     }
@@ -43,6 +42,25 @@ public class GameStatus {
                 temp.career=career;
             }
         }
+    }
+    public int ready(Player p,boolean yes){
+        for (player temp:onlinePlayers
+        ) {
+            if(temp.p==p){
+                temp.ready=true;
+                return 1;
+            }
+        }
+        return 3;
+    }
+    public int ready(Player p){
+        for (player temp:onlinePlayers
+        ) {
+            if(temp.p==p){
+                return temp.ready?1:0;
+            }
+        }
+        return 3;
     }
     public boolean saveDataToFile(){
         for (player temp:onlinePlayers
