@@ -20,25 +20,16 @@ public class chooseCareer implements Listener {
             //buffs(potionEffect) will be rewritten!
             switch (Objects.requireNonNull(e.getCurrentItem()).getType()) {
                 case DIAMOND_SWORD:
-                    if (game.Career(player) == 0) {
-                        GameStatus.onlinePlayerAdd(player);
-                    }
                     game.Career(player, 1);
                     game.ready(player, true);
                     chosen = true;
                     break;
                 case DIAMOND_BOOTS:
-                    if (game.Career(player) == 0) {
-                        GameStatus.onlinePlayerAdd(player);
-                    }
                     game.Career(player, 2);
                     game.ready(player, true);
                     chosen = true;
                     break;
                 case DIAMOND_PICKAXE:
-                    if (game.Career(player) == 0) {
-                        GameStatus.onlinePlayerAdd(player);
-                    }
                     game.Career(player, 3);
                     game.ready(player, true);
                     chosen = true;

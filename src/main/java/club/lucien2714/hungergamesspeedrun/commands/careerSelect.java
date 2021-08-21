@@ -1,5 +1,6 @@
 package club.lucien2714.hungergamesspeedrun.commands;
 
+import club.lucien2714.hungergamesspeedrun.components.components;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
@@ -22,30 +23,30 @@ public class careerSelect implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            Inventory uiChoose = Bukkit.createInventory(player, 9, createComponent("职业选择"));
+            Inventory uiChoose = Bukkit.createInventory(player, 9, components.createComponent("职业选择"));
             ItemStack runner = new ItemStack(Material.DIAMOND_BOOTS);
             ItemMeta runnerMeta = runner.getItemMeta();
-            runnerMeta.displayName(createComponent("奔跑者", TextColor.color(227, 23, 13)));
+            runnerMeta.displayName(components.createComponent("奔跑者", TextColor.color(227, 23, 13)));
             List<Component> runnerDetail = new ArrayList<Component>();
-            runnerDetail.add(createComponent("奔跑速度更快", TextColor.color(25, 90, 200)));
+            runnerDetail.add(components.createComponent("奔跑速度更快", TextColor.color(25, 90, 200)));
             runnerMeta.lore(runnerDetail);
             runnerMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
             runner.setItemMeta(runnerMeta);
 
             ItemStack collector = new ItemStack(Material.DIAMOND_PICKAXE);
             ItemMeta collectorMeta = collector.getItemMeta();
-            collectorMeta.displayName(createComponent("收集者", TextColor.color(227, 23, 13)));
+            collectorMeta.displayName(components.createComponent("收集者", TextColor.color(227, 23, 13)));
             List<Component> collectorDetail = new ArrayList<Component>();
-            collectorDetail.add(createComponent("采集效率更高", TextColor.color(25, 90, 200)));
+            collectorDetail.add(components.createComponent("采集效率更高", TextColor.color(25, 90, 200)));
             collectorMeta.lore(collectorDetail);
             collectorMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
             collector.setItemMeta(collectorMeta);
 
             ItemStack attacker = new ItemStack(Material.DIAMOND_SWORD);
             ItemMeta attackerMeta = attacker.getItemMeta();
-            attackerMeta.displayName(createComponent("战士", TextColor.color(227, 23, 13)));
+            attackerMeta.displayName(components.createComponent("战士", TextColor.color(227, 23, 13)));
             List<Component> attackerDetail = new ArrayList<Component>();
-            attackerDetail.add(createComponent("伤害更高", TextColor.color(25, 90, 200)));
+            attackerDetail.add(components.createComponent("伤害更高", TextColor.color(25, 90, 200)));
             attackerMeta.lore(attackerDetail);
             attackerMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
             attacker.setItemMeta(attackerMeta);
@@ -58,12 +59,5 @@ public class careerSelect implements CommandExecutor {
 
         return true;
     }
-    //makes it easier to create a Component man I hate this
-    private Component createComponent(@NotNull String text, @NotNull TextColor color) {
-        return Component.text(text).color(color);
-    }
 
-    private Component createComponent(@NotNull String text) {
-        return Component.text(text);
-    }
 }

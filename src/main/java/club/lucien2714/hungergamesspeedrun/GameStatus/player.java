@@ -14,12 +14,11 @@ public class player {
     public int career;
     public boolean ready=false;
     public Timestamp cd;
-
+    public player compassTarget=null;
     public boolean resetCD() {
         this.cd = new Timestamp(System.currentTimeMillis());
         return true;
     }
-
     public long AbilityCD() {
         Timestamp temp = new Timestamp(System.currentTimeMillis());
         return temp.getTime() - this.cd.getTime();

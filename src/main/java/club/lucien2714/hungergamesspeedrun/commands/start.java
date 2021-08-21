@@ -3,7 +3,6 @@ package club.lucien2714.hungergamesspeedrun.commands;
 import club.lucien2714.hungergamesspeedrun.GameStatus.GameStatus;
 import club.lucien2714.hungergamesspeedrun.GameStatus.player;
 import org.bukkit.Difficulty;
-import org.bukkit.GameMode;
 import org.bukkit.GameRule;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -15,13 +14,13 @@ public class start implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (GameStatus.gameStatus != GameStatus.gameState.Started) {
-            boolean ready = true;
+            String notReady=new String();
             for (player p : GameStatus.onlinePlayers
             ) {
                 if (p.ready != true)
-                    ready = false;
+                    notReady+=p.p.getName()+"、";
             }
-            if (ready) {
+            if (notReady.isEmpty()) {
                 GameStatus.gameStatus = GameStatus.gameState.Started;
                 for (World w : GameStatus.worlds
                 ) {
@@ -29,29 +28,13 @@ public class start implements CommandExecutor {
                     w.setTime(0);
                     w.setDifficulty(Difficulty.EASY);
                 }
-                for (int timer = 3; timer >= 0; timer--) {
-                    for (player temp : GameStatus.onlinePlayers
-                    ) {
-                        if (timer != 0) {
-                            temp.p.sendTitle(timer + "...", "", 0, 20, 0);
-                        } else {
-                            temp.p.teleport(GameStatus.worlds.get(0).getSpawnLocation());
-                            temp.p.setGameMode(GameMode.SURVIVAL);
-                            temp.p.sendTitle("猎杀开始！", "成为首个猎杀末影龙之人吧！", 10, 30, 10);
-                        }
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
+                GameStatus.gameStatus= GameStatus.gameState.Loading;
 
-                }
-
+            } else {
+                commandSender.sendMessage("还没有选择完职业！！");
             }
-        }
-        else{
-            commandSender.sendMessage("还有人没有选择完职业！！");
+        } else {
+            commandSender.sendMessage("游戏已开始!请勿重新启动!");
         }
         return true;
     }
