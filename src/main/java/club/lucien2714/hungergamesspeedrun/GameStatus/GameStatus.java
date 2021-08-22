@@ -3,6 +3,7 @@ package club.lucien2714.hungergamesspeedrun.GameStatus;
 import club.lucien2714.hungergamesspeedrun.saveData.saveData;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +16,11 @@ public class GameStatus {
         Stopped,
         Ended
     }//check the game status
-
+    public static ArrayList<ItemStack> potions = new ArrayList<ItemStack>();
     public static List<World> worlds = new ArrayList<World>();
     public static gameState gameStatus = gameState.Waiting;
     public static List<player> onlinePlayers = new ArrayList<player>();
-
+    public static final int cds[] = {30, 20, 30};
     public static void onlinePlayerAdd(Player p) {
         player temp = new player();
         temp.p = p;
@@ -117,5 +118,13 @@ public class GameStatus {
             GameStatus.onlinePlayers.get(pIndex).compassTarget=null;
         }
 
+    }
+    public static player getPlayer(Player p){
+        for (player pl:onlinePlayers
+             ) {
+            if(pl.p==p)
+                return pl;
+        }
+        return null;
     }
 }

@@ -16,6 +16,7 @@ public class ChangeCompassTarget implements Listener {
     public void change(PlayerInteractEvent e) {
         Player p = e.getPlayer();
         if (p.getItemInUse().getType() == Material.COMPASS) {
+            System.out.println("Changing target player:"+e.getPlayer());
             player pl = null;
             for (player temp : GameStatus.onlinePlayers
             ) {
