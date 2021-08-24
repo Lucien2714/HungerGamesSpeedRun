@@ -10,13 +10,13 @@ A  mc server plugin for papermc.A different version of speed run.
 3.Done!
 
 # Game Rule:
-1.Every person will have to choose a "career" in the game, and everyone will have a special ability depending on which career they choose.
+1.Every person will have to choose a "career" in the game, and everyone will have a special potion depending on which career they choose.
 
 2.type /start to start game.
 
-3.There is a protected Area from(x-10,y-50,z-10) to(x+10,y+100,z+10) ((x,y,z)is the default spawm location) ,in this area you can't fight\break\place blocks,zombies\skeletons\spiders\enderman will not be spawmed here.
+3.There is a protected Area from(x-10,y-50,z-10) to(x+10,y+100,z+10) ((x,y,z)is the default spawm location) ,in this area you can't fight other players nor break\place blocks,zombies\skeletons\spiders\enderman will not be spawmed here(and will not be able to give damage to players.
 
-4.Every player will get a compass to point at different players,right click when using it will let it change and locate another player(if the current pointed player isn't in the same world the pointer will keep rotating).
+4.Every player will get a compass to point at different players,right click when using it will let it change and locate another player(if the current pointed player isn't in the same world the pointer will keep rotating randomly).
 
 5.You can do anything just to kill the enderdragon,the first guy kills it will be the winner.
 
