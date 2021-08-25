@@ -17,7 +17,7 @@ A  mc server plugin for papermc.A different version of speed run.
 2.restart(reload) your server if your server is running  
 3.Done!  
 
-# 何以玩/Game Rule:
+# 何以游/Game Rule:
 1.每人皆须于游戏中择一业(“职业”)，然后每人皆据其所选得殊之药水。  
 2.书`/start` 始游  
 3.自(x-10,y-50,z-10)至(x+10,y+100,z+10)乃一方净土（安全区）（(x,y,z)乃默认生成地之坐标），汝不能击他人或破/置方块。与此同时，僵尸/骷髅/蜘蛛/末影人 皆将不会生于此地（同理，亦不能置伤于人）  
