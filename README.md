@@ -1,3 +1,5 @@
+弃坑状态 日后重置
+
 # HungerGamesSpeedRun
 此乃一papermc之服务器插件。修改版速通
 
